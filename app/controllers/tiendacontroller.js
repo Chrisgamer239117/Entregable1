@@ -11,7 +11,7 @@ module.exports = {
         mysql.conexion1.query(`SELECT * FROM inventario`,(err,rows,fields)=>{
             if(!err)
             {
-                res.json(rows);
+                valor(rows); //solo una  vez puedes usar el res.json(.....
             }
             else
             {
@@ -23,7 +23,7 @@ module.exports = {
         mysql.conexion2.query(`SELECT * FROM inventario`,(err,rows,fields)=>{
             if(!err)
             {
-                res.json(rows);
+                valor(rows); //mejor juntamos los resultados en un vector
             }
             else
             {
@@ -35,7 +35,7 @@ module.exports = {
         if(!err)
         {
             valor(rows)
-            res.json(vec);
+            res.json(vec); //al final lo mandamos
         }
         else
         {
